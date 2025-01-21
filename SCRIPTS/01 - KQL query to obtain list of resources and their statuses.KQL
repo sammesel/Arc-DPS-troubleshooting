@@ -1,0 +1,68 @@
+resources
+    | where type == "microsoft.hybridcompute/machines"
+    | extend serverId = tolower(tostring(id))
+    | extend serverName = name
+    | extend serverSubscriptionId = subscriptionId
+    | extend serverLocation = location
+    | extend serverResourceGroup = resourceGroup
+    | extend serverTags = tags
+    | extend serverProvisioningState = tostring(properties.provisioningState)
+    | extend serverServerStatus = tostring(properties.status)
+    // | where serverServerStatus == "Connected"
+    | extend serverOsType = tostring(properties.osType)
+    | extend serverDisplayName = tostring(properties.displayName)
+    | extend serverTotalPhysicalMemoryInGigabytes = toreal(properties.detectedProperties.totalPhysicalMemoryInGigabytes)
+    | extend serverProcessorCount = properties.detectedProperties.processorCount
+    | extend serverCoreCount = properties.detectedProperties.coreCount    
+    | extend serverLogicalCoreCount = properties.detectedProperties.logicalCoreCount
+    | extend serverMssqldiscovered = properties.detectedProperties.mssqldiscovered
+    | extend serverComputerName = tostring(properties.osProfile.computerName)
+    | extend serverEsuLicenseAssignment = tostring(properties.licenseProfile.esuProfile.licenseAssignmentState)
+    | extend serverEsuEligibility = tostring(properties.licenseProfile.esuProfile.esuEligibility)
+    | extend serverServerType = tostring(properties.licenseProfile.esuProfile.serverType)
+    | extend serverOsName = tostring(properties.osName)
+    | extend serverOsEdition = tostring(properties.osEdition)
+    | extend serverOsSKU = tostring(properties.osSku)
+    //| where serverMssqldiscovered == true
+    | project serverId, 
+        ["Server Name"] = serverName, ["Display Name"] = serverDisplayName, ["Computer Name"] = serverComputerName, ["OS Name"] = serverOsName, 
+        ["OS Type"] = serverOsType, ["OS Edition"] = serverOsEdition, ["OS SKU"] = serverOsSKU,
+        ["Server State"] = serverProvisioningState, ["Server Status"] = serverServerStatus, ["MSSQL Discovered"] = serverMssqldiscovered, 
+        ["Total Memory (GB)"] = serverTotalPhysicalMemoryInGigabytes, 
+        ["Processor"] = serverProcessorCount, ["Server Cores"] = serverCoreCount, ["Server Logical Cores"] = serverLogicalCoreCount, 
+        ["ESU License"] = serverEsuLicenseAssignment, ["ESU Eligibility"] = serverEsuEligibility, ["Server Type"] = serverServerType,
+        ["Subscription Id"] = serverSubscriptionId, ["Location"] = serverLocation, ["Resource Group"] = serverResourceGroup, ["Server Tags"] = serverTags
+    | join kind= leftouter (
+        resources
+            | where type == "microsoft.hybridcompute/machines/extensions"
+            | where properties.type in ("WindowsAgent.SqlServer","LinuxAgent.SqlServer")
+            | extend extensionId = tolower(tostring(id))
+            | extend extensionServerId = tolower(tostring (iff(id contains "/extensions/WindowsAgent.SqlServer" or id contains "/extensions/LinuxAgent.SqlServer", 
+                                                        substring(id, 0, indexof(id, "/extensions/")), 
+                                                        "")))
+            | extend extensionProvisioningState = tostring(properties.provisioningState) 
+            | extend extensionType = tostring(properties.type)
+            | extend extensionVersion = properties.instanceView.typeHandlerVersion
+            | parse properties with * 'SQL Server Extension Agent: ' sqlAgentStatus ';' *
+            | parse properties with * 'uploadStatus : ' uploadStatus ';' *
+            //| where sqlAgentStatus != "Healthy"
+            | extend extensionSQLAgentStatus = iff(isnotempty(sqlAgentStatus),sqlAgentStatus,"Unhealthy")
+            //| where uploadStatus == "OK"
+            | extend extensionUploadStatus = iff(isnotempty(uploadStatus),uploadStatus,"Missing SQL Agent")
+            | extend extensionLicenseType = tostring(properties.settings.LicenseType)
+            | extend extensionBpaEnabled = iff(notnull(properties.settings.AssessmentSettings),"true","false")
+            | extend extensionEsuEnabled = iff(notnull(properties.settings.enableExtendedSecurityUpdates),"true","false")
+            | project extensionId, extensionServerId,
+                ["Extension State"] = extensionProvisioningState, ["SQLExtension Status"] = extensionSQLAgentStatus, ["DPS Status"] = extensionUploadStatus, 
+                ["Extension Name"] = extensionType, ["Extension Version"] = extensionVersion,
+                ["Extension License"] = extensionLicenseType, ["BPA Enabled"] = extensionBpaEnabled, ["ESU Enabled"] = extensionEsuEnabled
+    )
+    on $left.serverId == $right.extensionServerId
+    | project ["Server Name"], ["Display Name"], ["Computer Name"], ["OS Name"], ["Extension License"], 
+        ["BPA Enabled"], ["ESU Enabled"], ["Processor"], ["Server Cores"], ["Server Logical Cores"],
+        ["Total Memory (GB)"], ["Server State"], ["Server Status"],
+        ["OS Type"], ["OS Edition"], ["Server Type"], ["OS SKU"], ["MSSQL Discovered"], 
+        ["ESU License"], ["ESU Eligibility"], 
+        ["Extension Name"], ["Extension Version"], ["Extension State"], ["SQLExtension Status"], ["DPS Status"],
+        ["Subscription Id"], ["Location"], ["Resource Group"], ["Server Tags"]
+    | order by ["Server Name"] asc 
