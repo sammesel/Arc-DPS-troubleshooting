@@ -21,3 +21,4 @@ B.5. All registered machines will be displayed<br>
 ![Alt text](IMAGES/013_AzureArcResources_AllMachines.jpg "Azure Arc Resources - All Machines")
 <br>
 
+B.6 
