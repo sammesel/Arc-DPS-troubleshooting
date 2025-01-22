@@ -3,7 +3,7 @@ A. go to your Azure Portal, and open Azure Arc<br>
 
 ![Alt text](IMAGES/010_AzurePortal_SearchAzureArc.jpg "Search for Azure Arc")
 
-A.1. type Resource Graph at search bar<br>
+A.1. type Azure Arc at search bar<br>
 A.2. Click on Azure Arc<br>
 
 A.3. Azure Arc screen will display<br>
