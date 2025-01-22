@@ -37,8 +37,9 @@ B.9. Observe the notification at the top right of the portal<br>
 ![Alt text](IMAGES/016_AzureArcResources_DeletionNotification.jpg "Azure Arc Resources - Deletion Notification")
 <br>
 
+B.10. Once that machines is deleted, the portal will display a confirmation at the notification panel<br>
+
+![Alt text](IMAGES/017_AzureArcResources_NotificationConfirmation.jpg "Azure Arc Resources - Notification Confirmation")
+<br>
 
 
-
-
-B.7. Once all machines are selected, click at the 
