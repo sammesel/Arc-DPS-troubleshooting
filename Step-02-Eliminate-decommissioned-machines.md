@@ -55,7 +55,6 @@ Connect-AzAccount<br>
 3. Delete the Azure Arc resource:<br>
 Remove-AzResource -ResourceId "/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.HybridCompute/machines/{resource-name}" -Force<br>
 Replace {subscription-id}, {resource-group-name}, and {resource-name} with your specific detail<br>
-<br>
 ### Using Azure CLI<br>
 1. Open your command line interface: Ensure you have the Azure CLI installed. If not, you can install it from the An external link was removed to protect your privacy..<br>
 2. Log in to your Azure account:<br>
