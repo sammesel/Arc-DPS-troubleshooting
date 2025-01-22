@@ -8,7 +8,6 @@ resources
     | extend serverTags = tags
     | extend serverProvisioningState = tostring(properties.provisioningState)
     | extend serverServerStatus = tostring(properties.status)
-    // | where serverServerStatus == "Connected"
     | extend serverOsType = tostring(properties.osType)
     | extend serverDisplayName = tostring(properties.displayName)
     | extend serverTotalPhysicalMemoryInGigabytes = toreal(properties.detectedProperties.totalPhysicalMemoryInGigabytes)
@@ -23,7 +22,6 @@ resources
     | extend serverOsName = tostring(properties.osName)
     | extend serverOsEdition = tostring(properties.osEdition)
     | extend serverOsSKU = tostring(properties.osSku)
-    //| where serverMssqldiscovered == true
     | project serverId, 
         ["Server Name"] = serverName, ["Display Name"] = serverDisplayName, ["Computer Name"] = serverComputerName, ["OS Name"] = serverOsName, 
         ["OS Type"] = serverOsType, ["OS Edition"] = serverOsEdition, ["OS SKU"] = serverOsSKU,
@@ -45,9 +43,7 @@ resources
             | extend extensionVersion = properties.instanceView.typeHandlerVersion
             | parse properties with * 'SQL Server Extension Agent: ' sqlAgentStatus ';' *
             | parse properties with * 'uploadStatus : ' uploadStatus ';' *
-            //| where sqlAgentStatus != "Healthy"
             | extend extensionSQLAgentStatus = iff(isnotempty(sqlAgentStatus),sqlAgentStatus,"Unhealthy")
-            //| where uploadStatus == "OK"
             | extend extensionUploadStatus = iff(isnotempty(uploadStatus),uploadStatus,"Missing SQL Agent")
             | extend extensionLicenseType = tostring(properties.settings.LicenseType)
             | extend extensionBpaEnabled = iff(notnull(properties.settings.AssessmentSettings),"true","false")
@@ -65,4 +61,7 @@ resources
         ["ESU License"], ["ESU Eligibility"], 
         ["Extension Name"], ["Extension Version"], ["Extension State"], ["SQLExtension Status"], ["DPS Status"],
         ["Subscription Id"], ["Location"], ["Resource Group"], ["Server Tags"]
+    | where ['MSSQL Discovered'] == true
+    | where ['Server Status'] != "Connected"
+    //| where ['SQLExtension Status'] != "Healthy"
     | order by ["Server Name"] asc 
