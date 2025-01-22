@@ -49,18 +49,18 @@ go to your Azure Portal, and open Azure Arc<br>
 ## to delete machines at scale <br>
 ### Using PowerShell<br>
 1. Open PowerShell: Ensure you have the Azure PowerShell module installed. If not, you can install it using:<br>
-Install-Module -Name Az -AllowClobber -Scope CurrentUser<br>
+`Install-Module -Name Az -AllowClobber -Scope CurrentUser`<br>
 ![Alt text](IMAGES/018_AzureArcResources_PowerShellInstallModule.jpg "Azure Arc Resources - PowerShell Module Installation")<br>
 2. Confirm the prompt<br>
 ![Alt text](IMAGES/019_AzureArcResources_PowerShellInstallModuleConfirmationPrompt.jpg "Azure Arc Resources - Module Installation Confirmation Prompt")<br>
 3. Connect to your Azure account:<br>
-Connect-AzAccount<br>
+`Connect-AzAccount`<br>
 ![Alt text](IMAGES/020_AzureArcResources_PowerShellConnectToAzure.jpg "Azure Arc Resources - PowerShell Connect to Azure Account")<br>
 Select the account to Login using the browser<br>
 ![Alt text](IMAGES/021_AzureArcResources_PowerShellSelectAccount.jpg "Azure Arc Resources - PowerShell Select the Account")<br>
 4. Delete the Azure Arc resource:<br>
-Remove-AzResource -ResourceId "/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.HybridCompute/machines/{resource-name}" -Force<br>
-Replace {subscription-id}, {resource-group-name}, and {resource-name} with your specific detail<br>
+`Remove-AzResource -ResourceId "/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.HybridCompute/machines/{resource-name}" -Force`<br>
+<br>*Replace {subscription-id}, {resource-group-name}, and {resource-name} with your specific detail*<br><br>
 ![Alt text](IMAGES/022_AzureArcResources_PowerShellDeleteCommand.jpg "Azure Arc Resources - PowerShell Delete Command")<br>
 After few seconds the resource is deleted and PowerShell replies confirming:<br>
 ![Alt text](IMAGES/023_AzureArcResources_PowerShellDeleteConfirmation.jpg "Azure Arc Resources - PowerShell Delete Confirmation")<br>
