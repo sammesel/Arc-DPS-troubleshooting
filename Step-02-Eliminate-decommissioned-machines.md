@@ -8,6 +8,6 @@ B.2. Click on Azure Arc<br>
 
 B.3. Azure Arc screen will display<br>
 
-![Alt text](IMAGES/011_AzureArc_LandingPage.jpg.jpg "Azure Arc Landing Page")
+![Alt text](IMAGES/011_AzureArc_LandingPage.jpg "Azure Arc Landing Page")
 <br>
 
