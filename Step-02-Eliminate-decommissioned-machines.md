@@ -1,4 +1,6 @@
-## Step-2 Eliminate Decommissioned machines
+# Step-2 Eliminate Decommissioned machines
+## to delete machines manually one-by-one <br>
+
 go to your Azure Portal, and open Azure Arc<br>
 
 ![Alt text](IMAGES/010_AzurePortal_SearchAzureArc.jpg "Search for Azure Arc")
@@ -44,8 +46,8 @@ go to your Azure Portal, and open Azure Arc<br>
 11. Dismiss that notification<br>
 <br>
 <br>
-## to delete machines at scale
-### Using PowerShell
+## to delete machines at scale <br>
+### Using PowerShell<br>
 1. Open PowerShell: Ensure you have the Azure PowerShell module installed. If not, you can install it using:<br>
 Install-Module -Name Az -AllowClobber -Scope CurrentUser<br>
 2. Connect to your Azure account:<br>
@@ -54,13 +56,13 @@ Connect-AzAccount<br>
 Remove-AzResource -ResourceId "/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.HybridCompute/machines/{resource-name}" -Force<br>
 Replace {subscription-id}, {resource-group-name}, and {resource-name} with your specific detail<br>
 <br>
-### Using Azure CLI
-1. Open your command line interface: Ensure you have the Azure CLI installed. If not, you can install it from the An external link was removed to protect your privacy..
-2. Log in to your Azure account:
-az login
-3. Delete the Azure Arc resource:
-az resource delete --ids "/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.HybridCompute/machines/{resource-name}"
-Replace {subscription-id}, {resource-group-name}, and {resource-name} with your specific details34.
+### Using Azure CLI<br>
+1. Open your command line interface: Ensure you have the Azure CLI installed. If not, you can install it from the An external link was removed to protect your privacy..<br>
+2. Log in to your Azure account:<br>
+az login<br>
+3. Delete the Azure Arc resource:<br>
+az resource delete --ids "/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.HybridCompute/machines/{resource-name}"<br>
+Replace {subscription-id}, {resource-group-name}, and {resource-name} with your specific details.<br>
 
 
 
