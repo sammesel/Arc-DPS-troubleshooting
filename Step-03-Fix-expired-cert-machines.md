@@ -1,4 +1,4 @@
-# Step-3 Reonboard machines showing 'Expired' on Status column
+# Step-3 Re-onboard machines showing 'Expired' on Status column
 
 The Arc-enabled machine must be re-onboarded to Arc, as the certificate used to authenticate to Azure has expired.<br>
 
