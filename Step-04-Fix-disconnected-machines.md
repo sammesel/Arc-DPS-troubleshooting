@@ -21,7 +21,7 @@ The Arc-enabled machine must be re-onboarded to Arc, as the certificate used to 
 
 5. If there are any machines with that status they will display 'Disconnected’ in the Agent Status column highlighted below.<br><br>
 
-![Alt text](IMAGES/024_AzureArcResources_CertExpiredMachines.jpg "Azure Arc Resources - Expired Certification Machines")
+![Alt text](IMAGES/025_AzureArcResources_DisconnectedMachines.jpg "Azure Arc Resources - Disconnected Machines")
 <br>
 
 Alternatively, you can open Resource Graph Explorer and load the [query](scripts/02_KQL_query_to_obtain_list_of_DisconnectedMachines.KQL)
