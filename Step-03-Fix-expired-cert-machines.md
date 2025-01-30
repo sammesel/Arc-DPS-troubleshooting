@@ -24,7 +24,8 @@ The Arc-enabled machine must be re-onboarded to Arc, as the certificate used to 
 ![Alt text](IMAGES/024_AzureArcResources_CertExpiredMachines.jpg "Azure Arc Resources - Expired Certification Machines")
 <br>
 
-6. Uninstall the agent by following the documentation here https://learn.microsoft.com/en-us/azure/azure-arc/servers/manage-agent?WT.mc_id=itopstalk-blog-socuff&tabs=windows#uninstall-the-agent
-    and then re-onboard here https://learn.microsoft.com/en-us/azure/azure-arc/servers/deployment-options.<br>
+6. Uninstall the agent by following the documentation [here](https://learn.microsoft.com/en-us/azure/azure-arc/servers/manage-agent?WT.mc_id=itopstalk-blog-socuff&tabs=windows#uninstall-the-agent)<br>
+
+7. Re-onboard those machines following instructions [here](https://learn.microsoft.com/en-us/azure/azure-arc/servers/deployment-options).<br>
 
    *NOTE: There is no need to delete the Arc-enabled SQL Server resources in the portal if you are just re-onboarding.*
