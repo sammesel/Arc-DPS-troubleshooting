@@ -19,7 +19,7 @@ The Arc-enabled machine must be re-onboarded to Arc, as the certificate used to 
 ![Alt text](IMAGES/012_AzureArcResources_Machines_menu.jpg "Azure Arc Resources - Machine - Menu option")
 <br>
 
-5. If there are any machines with that status they will display 'Expired’ in the Agent Status column highlighted below.<br><br>
+5. If there are any machines with that status they will display '**Expired**’ in the Agent Status column highlighted below.<br><br>
 
 ![Alt text](IMAGES/024_AzureArcResources_CertExpiredMachines.jpg "Azure Arc Resources - Expired Certification Machines")
 <br>
