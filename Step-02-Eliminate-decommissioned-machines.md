@@ -29,7 +29,8 @@ go to your Azure Portal, and open Azure Arc<br>
 ![Alt text](IMAGES/014_AzureArcResources_MachinesToBeDeleted.jpg "Azure Arc Resources - Delete Machine")
 <br>
 
-8. A confirmation dialog will pop up. Click on YES<br>
+8. Click on the delete button at the top bar<br>
+9. A confirmation dialog will pop up. Click on YES<br>
 
 ![Alt text](IMAGES/015_AzureArcResources_ConfirmDeletion.jpg "Azure Arc Resources - Confirm Deletion")
 <br>
@@ -66,12 +67,12 @@ After few seconds the resource is deleted and PowerShell replies confirming:<br>
 ![Alt text](IMAGES/023_AzureArcResources_PowerShellDeleteConfirmation.jpg "Azure Arc Resources - PowerShell Delete Confirmation")<br>
 
 ### Using Azure CLI<br>
-1. Open your command line interface: Ensure you have the Azure CLI installed. If not, you can install it from the An external link was removed to protect your privacy..<br>
+1. Open your command line interface: Ensure you have the Azure CLI installed. If not, you can install it from [here](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli-windows?tabs=azure-cli).<br><br>
 2. Log in to your Azure account:<br>
-az login<br>
+`az login`<br><br>
 3. Delete the Azure Arc resource:<br>
-az resource delete --ids "/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.HybridCompute/machines/{resource-name}"<br>
-Replace {subscription-id}, {resource-group-name}, and {resource-name} with your specific details.<br>
+`az resource delete --ids "/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.HybridCompute/machines/{resource-name}"`<br><br>
+*Replace {subscription-id}, {resource-group-name}, and {resource-name} with your specific details.*<br>
 
 
 
