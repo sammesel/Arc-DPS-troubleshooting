@@ -1,4 +1,4 @@
-## Step-1 identify Servers with SQL Server installed that are deemed as DPS BLOCKED
+## Step-1 Identify Servers with SQL Server installed that are deemed as DPS BLOCKED
 go to Azure Portal, and open Resource Graph Explorer<br>
 
 ![Alt text](IMAGES/001_AzurePortal_OpenResourceGraph.jpg "Azure Portal")
