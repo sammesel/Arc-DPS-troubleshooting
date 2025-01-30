@@ -23,14 +23,15 @@ go to your Azure Portal, and open Azure Arc<br>
 ![Alt text](IMAGES/013_AzureArcResources_AllMachines.jpg "Azure Arc Resources - All Machines")
 <br>
 
-6. using the listing, identify the Machine to be deleted and click on its name (left most column) <br>
-![Alt text](IMAGES/014_AzureArcResources_MachinesToBeDeleted_DeleteButton.jpg "Azure Arc Resources - Click on Machine")<br>
+6. using the listing, identify the Machine to be deleted and click on its name (leftmost column) <br>
+![Alt text](IMAGES/014_AzureArcResources_ClickOnMachinesToBeDeleted.jpg "Azure Arc Resources - Click on Machine")<br>
 7. Details of that machine will be shown <br>
 
 ![Alt text](IMAGES/014_AzureArcResources_MachinesToBeDeleted.jpg "Azure Arc Resources - Delete Machine")
 <br>
 
-8. Click on the delete button at the top bar<br>
+8. Click on the **delete** button at the toolbar<br>
+![Alt text](IMAGES/014_AzureArcResources_MachinesToBeDeleted_DeleteButton.jpg "Azure Arc Resources - Click on Machine")<br>
 9. A confirmation dialog will pop up. Click on YES<br>
 
 ![Alt text](IMAGES/015_AzureArcResources_ConfirmDeletion.jpg "Azure Arc Resources - Confirm Deletion")
