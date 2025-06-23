@@ -14,7 +14,7 @@ Step-by-step process to identify Arc-enabled SQL Server instances that are not c
 [Reconnect machines showing 'Disconnected' on Status column](Step-04-Fix-disconnected-machines.md)<br>
 
 ## Step-5 Address "Unhealthy Extension"
-[Review machines with status other than 'Healthy'](Step-05-Fix-unhealthy-extension.md)<br>
+[Review machines with status other than 'Healthy'](Step-05-Fix-provisioned-failed-status.md)<br>
 
 ## Step-6 Address machines with "FAILED" provisioning status
-[Review machines with Provisioning status other than 'OK'](Step-06-Fix-provisioned-failed-status.md)<br>
+[Review machines with Provisioning status other than 'OK'](Step-06-Fix-unhealthy-extension.md)<br>
