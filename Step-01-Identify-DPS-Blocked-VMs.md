@@ -12,7 +12,9 @@ go to Azure Portal, and open Resource Graph Explorer<br>
 <br>
 
 4. Copy/Paste the KQL query from the file 01_KQL_query_to_obtain_list_of_resources.KQL<br>
-5. the screen will look like:<br>
+<br>![01_KQL_query_to_obtain_list_of_resources.KQL](SCRIPTS/01_KQL_query_to_obtain_list_of_resources.KQL "")
+
+6. the screen will look like:<br>
 
 ![Alt text](IMAGES/003_ResourceGraph_DPSQuery.jpg "KQL Query")
 <br>
