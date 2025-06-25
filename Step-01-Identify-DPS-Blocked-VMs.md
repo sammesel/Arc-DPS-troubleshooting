@@ -11,10 +11,7 @@ go to Azure Portal, and open Resource Graph Explorer<br>
 ![Alt text](IMAGES/002_ResourceGraph_NewQuery.jpg "New Query")
 <br>
 
-4. Copy/Paste the KQL query from the file [visit "01_KQL_query_to_obtain_list_of_resources.KQL"](SCRIPTS/01 - KQL query to obtain list of resources and their statuses.KQL) located on SCRIPTS folder
-
-[Visit GitHub](https://github.com)<br>
-[File Link](path/to/file.md)<br>
+4. Copy/Paste the KQL query from the file "01_KQL_query_to_obtain_list_of_resources.KQL" located on SCRIPTS folder
 
 5. the screen will look like:<br>
 
