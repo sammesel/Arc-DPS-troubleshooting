@@ -8,3 +8,5 @@ azcmagent check --extensions all --location “<region>”
 ```
 replace "<region>" with the appropriate region name, for example eastus as illustrated below<br>
 
+![Alt text](IMAGES/001_AzurePortal_OpenResourceGraph.jpg "Azure Portal")
+
