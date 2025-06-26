@@ -33,7 +33,8 @@ go to Azure Portal, and open Resource Graph Explorer<br>
 
 9. Navigate to the following steps should the VM present the following situations:<br>
 
-> [!IMPORTANT]
-> * for DPS Status not OK go to Step-01-fix-DPS.md
-> * for SQL Extension State not Healthy go to Step-01-fix-SQLExtension.md
-> * for TLS related issues go to Step-01-fix-TLS.md
+for DPS Status not OK go to :arrow_right: [Step-01-fixA-DPS.md](Step-01-fixA-DPS.md)<br>
+for SQL Extension State not Healthy go to :arrow_right: [Step-01-fixB-SQLExtension.md](Step-01-fixB-SQLExtension.md)<br>
+for TLS related issues go to :arrow_right: [Step-01-fixC-TLS.md](Step-01-fixC-TLS.md)
+
+
