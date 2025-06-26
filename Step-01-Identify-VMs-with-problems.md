@@ -34,8 +34,8 @@ go to Azure Portal, and open Resource Graph Explorer<br>
 ## Step-2 Fix issues
 Navigate to the following pages according to the issues:<br>
 
-Connectivity Issues: For **DPS Status not OK**, or for **TLS related issues**  go to [Step-01-A-fix-Connectivity.md](Step-01-A-fix-Connectivity.md)<br>
-Agent Issues: For **SQL Extension State not Healthy** go to [Step-01-fix-B-SQLExtension.md](Step-01-B-fix-SQLExtension.md)<br>
+Connectivity Issues: For **DPS Status not OK**, or for **TLS related issues**  go to [Step-01-fix-A-Connectivity.md](Step-01-fix-A-Connectivity.md)<br>
+Agent Issues: For **SQL Extension State not Healthy** go to [Step-01-fix-B-SQLExtension.md](Step-01-fix-B-SQLExtension.md)<br>
 
 
 
