@@ -1,4 +1,4 @@
-## Step-1 Identify Servers with SQL Server installed that are presenting issues
+## Step-1 Identify Servers with issues
 go to Azure Portal, and open Resource Graph Explorer<br>
 
 ![Alt text](IMAGES/001_AzurePortal_OpenResourceGraph.jpg "Azure Portal")
@@ -34,7 +34,7 @@ go to Azure Portal, and open Resource Graph Explorer<br>
 9. Navigate to the following steps should the VM present the following situations:<br>
 
 For **DPS Status not OK**, or for **TLS related issues**  go to [Step-01-fix-Connectivity.md](Step-01-fix-Connectivity.md)<br>
-For SQL Extension State not Healthy go to [Step-01-fix-SQLExtension.md](Step-01-fix-SQLExtension.md)<br>
+For **SQL Extension State not Healthy** go to [Step-01-fix-SQLExtension.md](Step-01-fix-SQLExtension.md)<br>
 
 
 
