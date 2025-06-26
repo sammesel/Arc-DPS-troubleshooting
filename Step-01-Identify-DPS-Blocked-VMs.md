@@ -29,4 +29,4 @@ go to Azure Portal, and open Resource Graph Explorer<br>
 ```
 //| where ['DPS Status'] != "OK"
 ```
-![Alt text](IMAGES/004_ResourceGraph_DPSQuery.jpg "KQL Query")<br>
+![Alt text](IMAGES/005_ResourceGraph_DPSQuery_edited.jpg "KQL Query for DPS")<br>
