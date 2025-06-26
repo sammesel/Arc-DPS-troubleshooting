@@ -32,6 +32,8 @@ go to Azure Portal, and open Resource Graph Explorer<br>
 ![Alt text](IMAGES/005_ResourceGraph_DPSQuery_edited.jpg "KQL Query for DPS")<br>
 
 9. Navigate to the following steps should the VM present the following situations:<br>
-* DPS Status is not OK -->
-* SQL Extension State is not Healthy -->
-* TLS --> 
+
+> [!IMPORTANT]
+> * for DPS Status not OK go to Step-01-fix-DPS.md
+> * for SQL Extension State not Healthy go to Step-01-fix-SQLExtension.md
+> * for TLS related issues go to Step-01-fix-TLS.md
