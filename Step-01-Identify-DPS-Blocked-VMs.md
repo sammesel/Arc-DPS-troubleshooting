@@ -17,9 +17,11 @@ go to Azure Portal, and open Resource Graph Explorer<br>
 
 ![Alt text](IMAGES/003_ResourceGraph_DPSQuery.jpg "KQL Query")
 <br>
-6. Execute the Query by clicking at the [Run Query] button at the toolbar<br>
+
+6. Execute the Query by clicking at the [Run Query] button at the toolbar<br><br>
+
 7. Results will be shown at the results panel below the query, as seen in the image below:<br>
 
-![Alt text](IMAGES/004_ResourceGraph_DPSQuer_Results.jpg "Query Results")
-<br>
+![Alt text](IMAGES/004_ResourceGraph_DPSQuer_Results.jpg "Query Results")<br>
+scroll to the right to find the column **Server Status**
 
