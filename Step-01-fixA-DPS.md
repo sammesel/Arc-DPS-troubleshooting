@@ -6,7 +6,10 @@ issue the command: <br>
 ```
 azcmagent check --extensions all --location “<region>”
 ```
-replace "<region>" with the appropriate region name, for example eastus as illustrated below<br>
+replace \"\<region\>\" with the appropriate region name, for example eastus as illustrated below<br>
 
-![Alt text](IMAGES/001_AzurePortal_OpenResourceGraph.jpg "Azure Portal")
+![Alt text](IMAGES/009_DPS_Blocked.jpg "blocked DPS") <br>
+
+:red_circle:As it can be seen on the last 3 rows of the image, the column **Reachable** shows **false** indicating there is a problem to reach these endpoints. <br>
+
 
