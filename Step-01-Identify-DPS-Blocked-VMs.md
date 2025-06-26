@@ -21,7 +21,7 @@ go to Azure Portal, and open Resource Graph Explorer<br>
 
 7. Results will be shown at the results panel below the query, as seen in the image below:<br>
 
-![Alt text](IMAGES/004_ResourceGraph_DPSQuer_Results.jpg "Query Results")<br>
+![Alt text](IMAGES/004_ResourceGraph_DPSQuery_Results.jpg "Query Results")<br>
 
 8. scroll to the right to find the column **DPS Status**<br>
 * look for entries not showing DPS Status **OK**<br>
