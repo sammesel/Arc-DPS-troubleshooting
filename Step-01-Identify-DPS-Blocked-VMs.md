@@ -25,8 +25,8 @@ go to Azure Portal, and open Resource Graph Explorer<br>
 
 8. scroll to the right to find the column **DPS Status**<br>
 * look for entries not showing DPS Status **OK**<br>
-* alternatively edit the KQL query to add a filter by removing the comment sign (//) leading the line 67:<br>
+* alternatively edit the KQL query to add a filter by removing the comment sign (//) leading the line 69:<br>
 ```
 //| where ['DPS Status'] != "OK"
 ```
-
+![Alt text](IMAGES/004_ResourceGraph_DPSQuery.jpg "KQL Query")<br>
