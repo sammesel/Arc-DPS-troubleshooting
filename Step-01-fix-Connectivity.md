@@ -1,4 +1,4 @@
-# Communication Issues
+# Connectivity Issues
 
 ## How to verify communication issues
 
