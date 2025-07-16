@@ -46,15 +46,16 @@ resources
             | extend extensionSQLAgentStatus = iff(isnotempty(sqlAgentStatus),sqlAgentStatus,"Unhealthy")
             | extend extensionUploadStatus = iff(isnotempty(uploadStatus),uploadStatus,"Missing SQL Agent")
             | extend extensionLicenseType = tostring(properties.settings.LicenseType)
+            | extend extensionUsePhysicalCoreLicense = tostring(properties.settings.UsePhysicalCoreLicense.IsApplied)
             | extend extensionBpaEnabled = iff(notnull(properties.settings.AssessmentSettings),"true","false")
             | extend extensionEsuEnabled = iff(notnull(properties.settings.enableExtendedSecurityUpdates),"true","false")
             | project extensionId, extensionServerId,
                 ["Extension State"] = extensionProvisioningState, ["SQLExtension Status"] = extensionSQLAgentStatus, ["DPS Status"] = extensionUploadStatus, 
                 ["Extension Name"] = extensionType, ["Extension Version"] = extensionVersion,
-                ["Extension License"] = extensionLicenseType, ["BPA Enabled"] = extensionBpaEnabled, ["ESU Enabled"] = extensionEsuEnabled
+                ["Extension License"] = extensionLicenseType, ["pCore Enabled"] = extensionUsePhysicalCoreLicense, ["BPA Enabled"] = extensionBpaEnabled, ["ESU Enabled"] = extensionEsuEnabled
     )
     on $left.serverId == $right.extensionServerId
-    | project ["Server Name"], ["Display Name"], ["Computer Name"], ["OS Name"], ["Extension License"], 
+    | project ["Server Name"], ["Display Name"], ["Computer Name"], ["OS Name"], ["Extension License"], ["pCore Enabled"],
         ["BPA Enabled"], ["ESU Enabled"], ["Processor"], ["Server Cores"], ["Server Logical Cores"],
         ["Total Memory (GB)"], ["Server State"], ["Server Status"],
         ["OS Type"], ["OS Edition"], ["Server Type"], ["OS SKU"], ["MSSQL Discovered"], 
@@ -62,6 +63,6 @@ resources
         ["Extension Name"], ["Extension Version"], ["Extension State"], ["SQLExtension Status"], ["DPS Status"],
         ["Subscription Id"], ["Location"], ["Resource Group"], ["Server Tags"]
     | where ['MSSQL Discovered'] == true
-    | where ['Server Status'] != "Connected"
+    //| where ['Server Status'] != "Connected"
     //| where ['SQLExtension Status'] != "Healthy"
-    | order by ["Server Name"] asc 
+    | order by ["Server Name"] asc
